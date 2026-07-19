@@ -1,0 +1,156 @@
+<% layout('/layouts/boilerplate.ejs') %>
+
+<div class="row mt-3 mb-5">
+    <div class="col-12 col-md-8 offset-md-2">
+
+        <h3>Create New Listing</h3>
+
+        <form
+            action="/listings"
+            method="POST"
+            novalidate
+            class="needs-validation"
+            enctype="multipart/form-data"
+        >
+            <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input
+                    id="title"
+                    type="text"
+                    name="listing[title]"
+                    placeholder="Add catchy title"
+                    class="form-control"
+                    required
+                />
+                <div class="invalid-feedback">
+                    Oops! No title? Even movies with no budget have one. 🎬😂
+                </div>
+                <div class="valid-feedback">
+                    Nice title! Sounds exciting already. 🚀
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="mb-3 col-12 col-md-7">
+                    <label for="image" class="form-label">Upload Image</label>
+                    <input
+                        id="image"
+                        type="file"
+                        name="listing[image]"
+                        class="form-control"
+                        required
+                    />
+                    <div class="invalid-feedback">
+                        Hold up! No image? Even ghosts upload photos. 👻📸
+                    </div>
+                    <div class="valid-feedback">
+                        Great — your image is all set and looking just right. 📸
+                    </div>
+                </div>
+
+                <div class="mb-3 col-12 col-md-5">
+                    <label for="category" class="form-label">Select Category</label>
+                    <select
+                        class="form-select"
+                        id="category"
+                        aria-label="Default select example"
+                        name="listing[category]"
+                        required
+                    >
+                        <option selected disabled value="">Pick a Vibe...</option>
+                        <% for(let category in listingCategories) { %>
+                            <option value="<%= category %>">
+                                <%= category %>
+                            </option>
+                        <% } %>
+                    </select>
+                    <div class="invalid-feedback">
+                        Don't be lazy! You just have to click one. 🫵
+                    </div>
+                    <div class="valid-feedback">
+                        Now your listing has a category! 😂
+                    </div>
+                </div>
+
+            </div>
+            
+
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <textarea
+                    id="description"
+                    name="listing[description]"
+                    placeholder="Enter Description"
+                    class="form-control"
+                    required
+                ></textarea>
+                <div class="invalid-feedback">
+                    Description missing! Say something… even a potato has a story. 🥔✨
+                </div>
+                <div class="valid-feedback">
+                    Great description! You’re selling the vibe. ✨
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="mb-3 col-12 col-md-4">
+                    <label for="price" class="form-label">Price</label>
+                    <input
+                        id="price"
+                        type="number"
+                        name="listing[price]"
+                        placeholder="Enter Price"
+                        class="form-control"
+                        required
+                    />
+                    <div class="invalid-feedback">
+                        No price? Bro this isn’t charity! 💸🤣
+                    </div>
+                    <div class="valid-feedback">
+                        Perfect price! Wallets won’t cry. 💸
+                    </div>
+                </div>
+
+                <div class="mb-3 col-12 col-md-8">
+                    <label for="country" class="form-label">Country</label>
+                    <input
+                        id="country"
+                        type="text"
+                        name="listing[country]"
+                        placeholder="Enter Country"
+                        class="form-control"
+                        required
+                    />
+                    <div class="invalid-feedback">
+                        Country missing! Not even aliens forget their planet. 👽🌍
+                    </div>
+                    <div class="valid-feedback">
+                        Country locked in! ✈️ Ready for global vibes.
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="location" class="form-label">Location</label>
+                <input
+                    id="location"
+                    type="text"
+                    name="listing[location]"
+                    placeholder="Enter Location"
+                    class="form-control"
+                    required
+                />
+                <div class="invalid-feedback">
+                    Location empty? Google Maps is crying right now. 📍😢
+                </div>
+                <div class="valid-feedback">
+                    Location set! Maps would be proud. 🗺️
+                </div>
+            </div>
+
+            <button class="btn btn-danger mt-4">Add</button>
+        </form>
+    </div>
+</div>

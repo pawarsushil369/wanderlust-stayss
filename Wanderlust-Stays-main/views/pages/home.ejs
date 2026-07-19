@@ -1,0 +1,120 @@
+<% layout('/layouts/boilerplate.ejs') %>
+
+<% block('style').append('home') %>
+
+<div class="hero-section">
+    <div class="hero-content">
+        <h1 class="hero-title">
+            <span>Welcome</span>
+            <span class="small-word">to</span>
+            <span class="brand-name">WanderLust</span>
+        </h1>
+        <p>Find your next perfect stay, from cabins to castles.</p>
+        <a href="/listings" class="btn explore-btn">Explore Hotels</a>
+    </div>
+</div>
+
+<div class="container features">
+    <div class="row">
+        <div class="col-12 col-md-4">
+            <div class="feature-card js-touch-card" id="card-1">
+                <i class="fa-solid fa-house-chimney feature-icon"></i>
+                <h3>Home away from Home</h3>
+                <p>Discover unique homes and stays perfect for your trip.</p>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-4">
+            <div class="feature-card js-touch-card" id="card-2">
+                <i class="fa-solid fa-shield-halved feature-icon"></i>
+                <h3>Book with Confidence</h3>
+                <p>Enjoy peace of mind with our secure booking protection.</p>
+            </div>
+        </div>
+        <div class="col-12 col-md-4">
+            <div class="feature-card js-touch-card" id="card-3">
+                <i class="fa-solid fa-headset feature-icon"></i>
+                <h3>24/7 Support</h3>
+                <p>Our team is here to help you, day or night.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container split-cards-section">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-9 mb-4 mb-md-0">
+            <div class="split-card">
+
+                <div class="split-content card-top-cover js-touch-card">
+                    <div class="split-content card-top">
+                        <i class="fa-solid fa-suitcase-rolling big-icon"></i>
+
+                        <div class="content-wrapper top-text">
+                            <h3>For Travelers</h3>
+                            <p>Find unique stays and experiences tailored just for you.</p>
+                            <a href="/listings" class="btn btn-sm btn-dark rounded-pill mt-2">Explore</a>
+                        </div>
+
+                        <div class="glass-desc-box js-glass-trigger">
+                            <h5><i class="fa-regular fa-compass me-2"></i>Curated Journeys</h5>
+                            <p>Every stay is verified for quality. From hidden cabins to luxury villas, we ensure your trip is perfect.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="split-content card-bottom-cover js-touch-card">
+                    <div class="split-content card-bottom">
+                        <i class="fa-solid fa-key big-icon"></i>
+
+                        <div class="content-wrapper bottom-text">
+                            <h3>Become a Host</h3>
+                            <p>Earn extra income and unlock new opportunities by sharing your space.</p>
+                            <a href="/listings/new" class="btn btn-sm btn-dark rounded-pill mt-2">Get Started</a>
+                        </div>
+
+                        <div class="glass-desc-box glass-host-pos js-glass-trigger">
+                            <h5><i class="fa-solid fa-sack-dollar me-2"></i>Earn on Your Terms</h5>
+                            <p>Join millions of hosts who are turning their extra space into extra income to fund their own dreams.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="cta-section">
+    <div class="cta-overlay"></div>
+    <div class="container position-relative">
+        <div class="row align-items-center">
+            <div class="col-lg-7 text-center text-lg-start mb-4 mb-lg-0">
+                
+                <% if(!currUser) { %>
+                    <h2>Ready to start your journey?</h2>
+                    <p class="mb-3">Join WanderLust today. Sign up to get the latest travel deals.</p>
+                <% } else { %>
+                    <h2>Welcome back, <%= currUser.username %>!</h2>
+                    <p class="mb-3">The world is waiting. Where will you go next?</p>
+                <% } %>
+            </div>
+            
+            <div class="col-lg-5 text-center text-lg-end">
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center justify-content-lg-end">
+                    
+                    <% if(!currUser) { %>
+                        <a href="/signup" class="btn btn-outline-light btn-lg px-4 rounded-pill fw-bold">Sign Up</a>
+                        <a href="/login" class="btn btn-outline-light btn-lg px-4 rounded-pill fw-bold">Log in</a>
+                    <% } else { %>
+                        <a href="/listings/new" class="btn btn-outline-light btn-lg px-4 rounded-pill fw-bold">Host Your Home</a>
+                        <a href="/listings" class="btn btn-outline-light btn-lg px-4 rounded-pill fw-bold">Browse Hotels</a>
+                    <% } %>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/home.js"></script>
