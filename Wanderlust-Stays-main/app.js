@@ -37,6 +37,9 @@ const port = process.env.PORT || 8080;
 const dbUrl = process.env.ATLASDB_URL;
 const mySecret = process.env.MY_SECRET;
 
+console.log("DB URL exists:", !!dbUrl);
+console.log("MY_SECRET exists:", !!mySecret);
+
 main()
     .then(() => {
         console.log('Connected to DataBase');
