@@ -327,14 +327,11 @@ This command clears existing users, listings, and reviews before inserting demo 
 
 ## Author
 
-**Yash Raykar**
+**sushil pawar**
 
-- GitHub: [https://github.com/yashraykar0264](https://github.com/yashraykar0264)
-- LinkedIn: [https://www.linkedin.com/m/in/yash-raykar-72901231b/](https://www.linkedin.com/m/in/yash-raykar-72901231b/)
-- Email: [raykaryash45@gmail.com](mailto:raykaryash45@gmail.com)
 
 <div align="center">
 
-**Built with care by Yash Raykar**
+**Built with care by Sushil Pawar**
 
 </div>
